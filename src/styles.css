@@ -1,0 +1,39 @@
+#navbar {
+  padding: 0px;
+}
+
+.container-fluid {
+  padding-top: 0px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#heroText {
+  display: flex;
+  position: absolute;
+  text-align: center;
+}
+
+#heroName {
+  font-size: 3rem;
+}
+
+#heroTagline {
+  font-size: 2rem;
+  color: #E8D600; 
+}
+
+#heroImg {
+  width: 100%;
+  max-height: 700px;
+  position: relative;
+}
+
+#aboutMe {
+  text-align: center;
+  padding-top: 2rem;
+}
