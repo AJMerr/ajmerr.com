@@ -77,8 +77,8 @@ resource "aws_cloudfront_distribution" "ajmerr_distribution" {
   default_root_object = "index.html"
 
   default_cache_behavior {
-    allowed_methods  = ["GET", "READ"]
-    cached_methods   = ["GET", "READ"]
+    allowed_methods  = ["GET", "HEAD", "OPTIONS"]
+    cached_methods   = ["GET", "HEAD"]
     target_origin_id = "S3-${aws_s3_bucket.ajmerr_host.id}"
 
     viewer_protocol_policy = "redirect-to-https"
