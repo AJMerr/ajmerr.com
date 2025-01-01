@@ -18,12 +18,6 @@ resource "aws_s3_bucket" "ajmerr_host" {
   force_destroy = true
 }
 
-# AWS S3 Bucket ACL
-resource "aws_s3_bucket_acl" "ajmerr_host_acl" {
-  bucket = aws_s3_bucket.ajmerr_host.id
-  acl    = "public-read"
-}
-
 # AWS S3 Bucket Website Configuration
 resource "aws_s3_bucket_website_configuration" "ajmerr_host_website" {
   bucket = aws_s3_bucket.ajmerr_host.id
@@ -61,6 +55,14 @@ resource "aws_s3_bucket_public_access_block" "ajmerr_host_block" {
   block_public_policy     = false
   ignore_public_acls      = false
   restrict_public_buckets = false
+}
+
+# Ensure Object Ownership is enforced (disabling ACLs)
+resource "aws_s3_bucket_ownership_controls" "ajmerr_host_ownership" {
+  bucket = aws_s3_bucket.ajmerr_host.id
+  rule {
+    object_ownership = "BucketOwnerEnforced"
+  }
 }
 
 # AWS CloudFront 
