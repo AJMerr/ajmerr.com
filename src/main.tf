@@ -53,6 +53,16 @@ resource "aws_s3_bucket_policy" "ajmerr_host_policy" {
   })
 }
 
+# Public Access Block for the S3 Bucket
+resource "aws_s3_bucket_public_access_block" "ajmerr_host_block" {
+  bucket = aws_s3_bucket.ajmerr_host.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
 # AWS CloudFront 
 resource "aws_cloudfront_distribution" "ajmerr_distribution" {
   origin {
