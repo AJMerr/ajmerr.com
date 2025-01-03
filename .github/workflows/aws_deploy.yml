@@ -1,7 +1,4 @@
-If your focus is solely on updating the S3 bucket with changes to your HTML and CSS files, you can simplify the GitHub Actions workflow by removing the Terraform steps and using aws s3 sync to handle the deployment. Here’s a streamlined version of the workflow:
-GitHub Actions Workflow for S3 Deployment
-
-name: Deploy Static Website to S3
+name: Deploy to AWS
 
 on:
   push:
