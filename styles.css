@@ -79,3 +79,10 @@
   text-align: center;
   padding-top: 1rem;
 }
+
+#projectFooter {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
