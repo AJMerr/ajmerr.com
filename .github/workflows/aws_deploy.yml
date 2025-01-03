@@ -25,7 +25,7 @@ jobs:
     # 3. Deploy Static Files to S3
     - name: Sync files to S3
       run: |
-        aws s3 sync . s3://your-s3-bucket-name \
+        aws s3 sync . s3://ajmerr-portfolio-website \
         --exclude ".git/*" \
         --exclude "*.tf/*" \
         --delete
