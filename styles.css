@@ -64,7 +64,14 @@
   padding-top: 1rem;
 }
 
-.projects {
+#project-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+#projects {
   display: flex;
   justify-content: center;
   align-items: center;
