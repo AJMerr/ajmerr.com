@@ -34,15 +34,30 @@
     font-size: 0.9rem;
   }
   
+  /* Make the brand name (AJMerr) smaller */
   #navbar ul li strong {
     font-size: 0.9rem;
   }
 }
 
-.container-fluid {
-  padding-top: 0px;
+/* For very small screens */
+@media (max-width: 480px) {
+  #navbar ul:last-child {
+    gap: 0.25rem;
+  }
+  
+  #navbar ul li a {
+    padding: 0.25rem;
+    font-size: 0.8rem;
+  }
 }
 
+/* Main Container */
+main.container-fluid {
+  padding-top: 4rem;
+}
+
+/* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
@@ -50,7 +65,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: green;
+  color: #ffffff;
 }
 
 .hero::before {
@@ -80,18 +95,23 @@
 .heroContent {
   position: relative;
   z-index: 3;
+  animation: fadeIn 1.5s ease-in;
 }
 
 #heroName {
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #heroTagline {
-  font-size: 2rem;
-  color: #E8D600; 
+  font-size: 2.2rem;
+  color: #FFD700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+/* About Me Section */
 #aboutMe {
   display: flex;
   justify-content: center;
@@ -101,6 +121,7 @@
   padding-top: 1rem;
 }
 
+/* Projects Section */
 #project-title {
   display: flex;
   justify-content: center;
@@ -117,9 +138,82 @@
   padding-top: 1rem;
 }
 
+/* Shared Article Styles */
+#aboutMe article,
+#projects article,
+#contact article {
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-self: stretch;
+  padding: 2rem;
+}
+
+#aboutMe article:hover,
+#projects article:hover {
+  transform: translateY(-5px);
+}
+
+/* Project Footer */
 #projectFooter {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+#projectFooter a {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #FFD700;
+  color: #110B31;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#projectFooter a:hover {
+  background-color: #E8D600;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #heroName {
+    font-size: 3rem;
+  }
+  
+  #heroTagline {
+    font-size: 1.8rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+#aboutMe article h2,
+#contact article h2 {
+  margin-top: 0;
+}
+
+/* Typing Animation */
+.typed-text::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
