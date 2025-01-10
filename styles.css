@@ -1,5 +1,42 @@
+/* Navigation */
 #navbar {
-  padding: 0px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgb(25, 28, 32);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.25rem 1rem;
+}
+
+#navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+  #navbar {
+    padding: 0.5rem;
+  }
+  
+  #navbar ul {
+    gap: 0.5rem;
+  }
+
+  #navbar ul li a {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  #navbar ul li strong {
+    font-size: 0.9rem;
+  }
 }
 
 .container-fluid {
